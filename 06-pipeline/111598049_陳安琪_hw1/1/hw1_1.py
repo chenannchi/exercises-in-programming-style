@@ -67,17 +67,7 @@ def print_all(word_freqs):
 #
 # The main function
 #
+        
+
 if __name__ == "__main__":
-    input_file = sys.argv[1]
-    stop_words_file = sys.argv[2]
-
-    with open(input_file) as f:
-        text = f.read()
-
-    normalized_text = filter_chars_and_normalize(text)
-    words = scan(normalized_text)
-    remove = remove_stop_words(stop_words_file)
-    filtered_words = remove(words)
-
-    for word in filtered_words:
-        print(word)
+    print_all(sort(frequencies(remove_stop_words(sys.argv[2])(scan(filter_chars_and_normalize(read_file(sys.argv[1]))))))[0:25])
