@@ -68,6 +68,5 @@ def print_all(word_freqs):
 # The main function
 #
         
-
 if __name__ == "__main__":
     print_all(sort(frequencies(remove_stop_words(sys.argv[2])(scan(filter_chars_and_normalize(read_file(sys.argv[1]))))))[0:25])
